@@ -18,12 +18,13 @@ function! yamada#Yamada()
   let l = len(cl)
   let i = 0
   redraw
-  while 1
+  while getchar(0) == 0
     call setline(1, cl[i % l])
     let i += 1
     redraw
     sleep 100ms
   endwhile
+  bw!
 endfunction
 
 finish
